@@ -1,0 +1,4 @@
+text,label
+"User received an email with a fake login link requesting credentials",phishing
+"Suspicious file hash detected in malware analysis",malware
+"IP address associated with brute force attack attempts",bruteforce

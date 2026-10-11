@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Cyber Threat Intelligence{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Background Video -->
+    <video class="video-bg" autoplay muted loop>
+        <source src="{{ url_for('static', filename='cyber_bg.mp4') }}" type="video/mp4">
+    </video>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('lookup') }}">Lookup</a>
+        <a href="{{ url_for('analyze') }}">Analyze</a>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

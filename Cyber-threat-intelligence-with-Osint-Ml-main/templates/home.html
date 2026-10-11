@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Cyber Threat Intelligence{% endblock %}
+
+{% block content %}
+<div style="text-align:center; margin-top:50px;">
+    <h1>Welcome to the Cyber Threat Intelligence Platform</h1>
+    <p>Lookup IPs, URLs, Domains and analyze threats using ML & OSINT</p>
+    <a href="{{ url_for('lookup') }}"><button>Start Lookup</button></a>
+</div>
+{% endblock %}

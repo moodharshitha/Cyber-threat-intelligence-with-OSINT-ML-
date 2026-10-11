@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Indicator Lookup{% endblock %}
+
+{% block content %}
+<form method="POST">
+    <h2>Enter IPs, URLs, or Domains (one per line)</h2>
+    <textarea name="indicators" rows="6" placeholder="http://example.com"></textarea>
+    <button type="submit">Lookup</button>
+</form>
+
+{% if results %}
+    <h2>Results:</h2>
+    {% for item in results['items'] %}
+        <div class="result-card">
+            <strong>Indicator:</strong> {{ item['indicator'] }} ({{ item['type'] }})<br>
+            <strong>ML Prediction:</strong> {{ item['ml_prediction']['prediction'] }} (Confidence: {{ item['ml_prediction']['probability'] }})<br>
+            <strong>OSINT Summary:</strong>
+            <pre>{{ item['summary'] | tojson(indent=2) }}</pre>
+        </div>
+    {% endfor %}
+{% endif %}
+{% endblock %}

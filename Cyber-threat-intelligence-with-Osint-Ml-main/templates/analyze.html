@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Analyze Threat Report{% endblock %}
+
+{% block content %}
+<form method="POST">
+    <h2>Enter Threat Report Text</h2>
+    <textarea name="report_text" rows="6" placeholder="Paste threat report here..."></textarea>
+    <button type="submit">Analyze</button>
+</form>
+
+{% if output %}
+    <div class="result-card">
+        <strong>Prediction:</strong> {{ output['prediction'] }}<br>
+        <strong>Probability:</strong> {{ output['probability'] }}
+    </div>
+{% endif %}
+{% endblock %}

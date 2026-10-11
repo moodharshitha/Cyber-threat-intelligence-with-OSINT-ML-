@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-container">
+    <h2>Sign Up</h2>
+    <form method="POST" action="/signup">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="number" placeholder="Phone Number" required>
+        <input type="password" name="password" placeholder="Create Password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+    <div class="auth-links">
+        <a href="/login">Already have an account? Login</a>
+    </div>
+</div>
+{% endblock %}
